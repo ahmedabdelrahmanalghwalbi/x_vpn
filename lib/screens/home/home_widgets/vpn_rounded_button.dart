@@ -17,51 +17,50 @@ class VpnRoundedButton extends StatelessWidget {
           child: InkWell(
             onTap: () {},
             borderRadius: BorderRadius.circular(100),
-            child: Container(),
-            // child: Container(
-            //   padding: const EdgeInsets.all(18),
-            //   decoration: BoxDecoration(
-            //     shape: BoxShape.circle,
-            //     // color: _homeController.getRoundedVpnButtonColor
-            //     //     .withOpacity(400)
-            //   ),
-            //   child: Container(
-            //     padding: const EdgeInsets.all(18),
-            //     decoration: BoxDecoration(
-            //       shape: BoxShape.circle,
-            //       color:
-            //           _homeController.getRoundedVpnButtonColor.withOpacity(500),
-            //     ),
-            //     child: Container(
-            //       width: AppSizes.getScreenWidth(context) * .15,
-            //       height: AppSizes.getScreenHeight(context) * .15,
-            //       padding: const EdgeInsets.all(4),
-            //       decoration: BoxDecoration(
-            //           shape: BoxShape.circle,
-            //           color: _homeController.getRoundedVpnButtonColor),
-            //       child: Column(
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: [
-            //           const Icon(
-            //             Icons.power_settings_new,
-            //             size: 30,
-            //             color: ColorManager.white,
-            //           ),
-            //           const SizedBox(
-            //             height: 6,
-            //           ),
-            //           Text(
-            //             _homeController.getRoundedVpnButtonText,
-            //             style: const TextStyle(
-            //                 fontSize: 14,
-            //                 color: Colors.white,
-            //                 fontWeight: FontWeight.w400),
-            //           )
-            //         ],
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            child: Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color:
+                      _homeController.getRoundedVpnButtonColor.withOpacity(.4)),
+              child: Container(
+                padding: const EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color:
+                      _homeController.getRoundedVpnButtonColor.withOpacity(.6),
+                ),
+                child: Container(
+                  width: AppSizes.getScreenWidth(context) * .3,
+                  height: AppSizes.getScreenHeight(context) * .3,
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _homeController.getRoundedVpnButtonColor),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.power_settings_new,
+                        size: 30,
+                        color: ColorManager.white,
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        _homeController.getRoundedVpnButtonText,
+                        style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ),
         )
       ],
