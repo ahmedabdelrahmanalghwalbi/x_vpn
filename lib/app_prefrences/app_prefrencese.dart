@@ -30,7 +30,7 @@ class AppPrefrencese {
   // </Single Setters AND GETTERS>
 
   // <All VPN Setters AND GETTERS>
-  static set allVpn(List<VpnInfo> allvpns) => boxOfData.put(
+  static set allVpns(List<VpnInfo> allvpns) => boxOfData.put(
       StringManager.allVpns,
       jsonEncode(allvpns.map((e) => e.toJson()).toList()));
 
