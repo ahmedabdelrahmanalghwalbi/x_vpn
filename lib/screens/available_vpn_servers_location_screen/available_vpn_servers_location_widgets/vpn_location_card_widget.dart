@@ -36,11 +36,11 @@ class VpnLocationCardWidget extends StatelessWidget {
           Get.back();
           if (homeController.vpnConnectionState.value ==
               VpnEngine.vpnConnectedNow) {
-            VpnEngine.stopVpnNow();
+            await VpnEngine.stopVpnNow();
             Future.delayed(const Duration(seconds: 3),
                 () => homeController.connectToVpnNow());
           } else {
-            homeController.connectToVpnNow();
+            await homeController.connectToVpnNow();
           }
         },
         borderRadius: BorderRadius.circular(12),
