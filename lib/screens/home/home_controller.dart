@@ -54,8 +54,22 @@ class HomeController extends GetxController {
         return "Tap To Connect";
       case VpnEngine.vpnConnectedNow:
         return "Tap To Disconnect";
+      case VpnEngine.vpnDeniedNow:
+        return "denied";
+      case VpnEngine.vpnPrepareNow:
+        return "prepare";
+      case VpnEngine.vpnConnectingNow:
+        return "connecting";
+      case VpnEngine.vpnNoConnectionNow:
+        return "no_connection";
+      case VpnEngine.vpnReconnectNow:
+        return "reconnect";
+      case VpnEngine.vpnAuthenticatingNow:
+        return "authenticating";
+      case VpnEngine.vpnWaitConnectionNow:
+        return "wait_connection";
       default:
-        return "Connecting ........";
+        return "other connection status  ........";
     }
   }
 }
