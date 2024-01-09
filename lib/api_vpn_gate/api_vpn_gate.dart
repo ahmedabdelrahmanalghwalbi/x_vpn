@@ -21,10 +21,10 @@ class ApiVpnGate {
       List<List<dynamic>> listData =
           const CsvToListConverter().convert(commaSeperatedValueString);
       final header = listData[0];
-      for (var counter = 0; counter < listData.length - 1; counter++) {
+      for (var counter = 1; counter < listData.length - 1; counter++) {
         Map<String, dynamic> jsonData = {};
         for (var innerCounter = 0;
-            innerCounter < listData.length - 1;
+            innerCounter < header.length;
             innerCounter++) {
           jsonData.addAll({
             header[innerCounter].toString(): listData[counter][innerCounter]

@@ -35,10 +35,9 @@ class AppPrefrencese {
       jsonEncode(allvpns.map((e) => e.toJson()).toList()));
 
   static List<VpnInfo> get allvpns {
-    return ((jsonDecode(boxOfData.get(StringManager.allVpns) ?? []))
-            as List<Map<String, dynamic>>)
-        .map((e) => VpnInfo.fromJson(e))
-        .toList();
+    return List<VpnInfo>.from(
+        ((jsonDecode(boxOfData.get(StringManager.allVpns) ?? "[]")))
+            .map((e) => VpnInfo.fromJson(e)));
   }
   // <All VPN Setters AND GETTERS>
 }

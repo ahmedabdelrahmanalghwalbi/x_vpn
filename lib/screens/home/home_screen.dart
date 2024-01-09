@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:x_vpn/controllers/theme_controller.dart';
 import 'package:x_vpn/models/vpn_status.dart';
+import 'package:x_vpn/screens/available_vpn_servers_location_screen/available_vpn_servers_location_screen.dart';
 import 'package:x_vpn/screens/home/home_controller.dart';
 import 'package:x_vpn/screens/home/home_widgets/custom_rounded_widget.dart';
 import 'package:x_vpn/screens/home/home_widgets/location_selection_bottom_navigation_bar.dart';
@@ -17,13 +18,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    VpnEngine.snapshotVpnStage().listen((event) {
+      _homeController.vpnConnectionState.value = event;
+    });
     return Scaffold(
       appBar: AppBar(
         title: const Text("VPNX"),
         backgroundColor: ColorManager.mainColor,
         leading: IconButton(
           icon: const Icon(Icons.perm_device_info),
-          onPressed: () {},
+          onPressed: () => Get.to(() => AvailableVpnServersLocationScreen()),
         ),
         actions: const [
           IconButton(
@@ -56,8 +60,8 @@ class HomeScreen extends StatelessWidget {
                                   .vpnInfo.value.countryLongName?.isEmpty ??
                               false
                           ? null
-                          : const AssetImage(
-                              "assets/images/flag.png"), //here i want to put the flag of each country
+                          : AssetImage(
+                              "assets/flags/${_homeController.vpnInfo.value.countryShortName?.toLowerCase()}.png"), //here i want to put the flag of each country
                       child: _homeController
                                   .vpnInfo.value.countryLongName?.isEmpty ??
                               false

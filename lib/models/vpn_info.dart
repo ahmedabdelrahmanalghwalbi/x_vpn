@@ -2,7 +2,7 @@ class VpnInfo {
   final String? hostname;
   final String? ip;
   final String? ping;
-  final String? speed;
+  final int? speed;
   final String? countryLongName;
   final String? countryShortName;
   final int? vpnSessionsNum;
@@ -28,7 +28,7 @@ class VpnInfo {
         hostname = json?['HostName'] ?? "",
         ip = json?['IP'] ?? "",
         ping = json?['Ping']?.toString() ?? "",
-        speed = json?['Speed'] ?? "0",
+        speed = json?['Speed'] ?? 0,
         vpnSessionsNum = json?['NumVpnSessions'];
 
 //to json() method that convert from object data type to Map<String,dynamic> data type
