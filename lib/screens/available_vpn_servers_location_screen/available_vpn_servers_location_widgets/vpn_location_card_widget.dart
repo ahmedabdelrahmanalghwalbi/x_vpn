@@ -24,23 +24,23 @@ class VpnLocationCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final HomeController _homeController = Get.find<HomeController>();
+    final HomeController homeController = Get.find<HomeController>();
     return Card(
       elevation: 6,
       margin: EdgeInsets.symmetric(vertical: AppSizes.getScreenWidth(context)),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: () async {
-          _homeController.vpnInfo.value = vpnInfo;
+          homeController.vpnInfo.value = vpnInfo;
           AppPrefrencese.vpn = vpnInfo;
           Get.back();
-          if (_homeController.vpnConnectionState.value ==
+          if (homeController.vpnConnectionState.value ==
               VpnEngine.vpnConnectedNow) {
             VpnEngine.stopVpnNow();
             Future.delayed(const Duration(seconds: 3),
-                () => _homeController.connectToVpnNow());
+                () => homeController.connectToVpnNow());
           } else {
-            _homeController.connectToVpnNow();
+            homeController.connectToVpnNow();
           }
         },
         borderRadius: BorderRadius.circular(12),
