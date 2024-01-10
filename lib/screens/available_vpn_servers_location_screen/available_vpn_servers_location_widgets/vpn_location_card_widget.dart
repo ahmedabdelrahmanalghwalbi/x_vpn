@@ -30,17 +30,17 @@ class VpnLocationCardWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: AppSizes.getScreenWidth(context)),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
-        onTap: () async {
+        onTap: () {
           homeController.vpnInfo.value = vpnInfo;
           AppPrefrencese.vpn = vpnInfo;
           Get.back();
           if (homeController.vpnConnectionState.value ==
               VpnEngine.vpnConnectedNow) {
-            await VpnEngine.stopVpnNow();
+            VpnEngine.stopVpnNow();
             Future.delayed(const Duration(seconds: 3),
                 () => homeController.connectToVpnNow());
           } else {
-            await homeController.connectToVpnNow();
+            homeController.connectToVpnNow();
           }
         },
         borderRadius: BorderRadius.circular(12),

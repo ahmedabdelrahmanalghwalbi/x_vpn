@@ -21,7 +21,7 @@ class VpnEngine {
           .cast();
 
   static Future<void> startVpnNow(VpnConfiguration vpnConfiguration) async =>
-      const MethodChannel(methodChannelVpnControl).invokeMethod("start", {
+      await const MethodChannel(methodChannelVpnControl).invokeMethod("start", {
         "config": vpnConfiguration.config,
         "country": vpnConfiguration.countryName,
         "username": vpnConfiguration.username,
@@ -29,19 +29,21 @@ class VpnEngine {
       });
 
   static Future<void> stopVpnNow() async =>
-      const MethodChannel(methodChannelVpnControl).invokeMethod("stop");
+      await const MethodChannel(methodChannelVpnControl).invokeMethod("stop");
 
   static Future<void> killSwitchOpenNow() async =>
-      const MethodChannel(methodChannelVpnControl).invokeMethod("kill_switch");
+      await const MethodChannel(methodChannelVpnControl)
+          .invokeMethod("kill_switch");
 
   static Future<void> refreshStageNow() async =>
-      const MethodChannel(methodChannelVpnControl).invokeMethod("refresh");
+      await const MethodChannel(methodChannelVpnControl)
+          .invokeMethod("refresh");
 
   static Future<String?> getStageNow() async =>
-      const MethodChannel(methodChannelVpnControl).invokeMethod("stage");
+      await const MethodChannel(methodChannelVpnControl).invokeMethod("stage");
 
-  static Future<bool> isConnectedNow() =>
-      getStageNow().then((value) => value?.toLowerCase() == "connected");
+  static Future<bool> isConnectedNow() async =>
+      await getStageNow().then((value) => value?.toLowerCase() == "connected");
 
   //stages of vpn connection
   static const String vpnConnectedNow = "connected";

@@ -19,7 +19,7 @@ class IpInfo {
   factory IpInfo.fromJson(Map<String, dynamic> json) => IpInfo(
       cityName: json['city'] ?? '',
       countryName: json['country'] ?? '',
-      internetServiceProvider: json['ips'] ?? 'Unknown',
+      internetServiceProvider: json['isp'] ?? 'Unknown',
       query: json['query'] ?? 'Not Available',
       regionName: json['regionName'] ?? '',
       timezone: json['timezone'] ?? 'Unknown',
