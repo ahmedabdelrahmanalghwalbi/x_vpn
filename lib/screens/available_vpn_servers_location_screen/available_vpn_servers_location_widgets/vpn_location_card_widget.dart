@@ -26,8 +26,9 @@ class VpnLocationCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeController homeController = Get.find<HomeController>();
     return Card(
+      color: Colors.white,
       elevation: 6,
-      margin: EdgeInsets.symmetric(vertical: AppSizes.getScreenWidth(context)),
+      margin: const EdgeInsets.symmetric(vertical: AppSizes.s12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: () {

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:x_vpn/screens/available_vpn_servers_location_screen/available_vpn_servers_location_screen.dart';
 import 'package:x_vpn/utilites/color_manager.dart';
 import 'package:x_vpn/utilites/size_manager.dart';
 import 'package:x_vpn/utilites/string_manager.dart';
@@ -13,7 +15,7 @@ class LocationSelectionBottomNavigation extends StatelessWidget {
         child: Semantics(
       button: true,
       child: InkWell(
-        onTap: () {},
+        onTap: () => Get.to(() => AvailableVpnServersLocationScreen()),
         child: Container(
           padding: const EdgeInsets.all(AppSizes.s12),
           color: ColorManager.mainColor,
