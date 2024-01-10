@@ -1,6 +1,10 @@
 # X_VPN
 
-X_VPN is a free VPN app implemented in Flutter, with native Java integration and the following dependencies:
+X_VPN is a free VPN app implemented in Flutter, with native Java integration, to demonstrate the seamless integration of native code with Flutter.
+
+The main purpose of this project is to showcase the ability to leverage the power of native Java code within a Flutter app. By integrating native Java code using the method channel, we can access platform-specific features and APIs that are not directly available in Flutter.
+
+In addition to the native Java integration, the project utilizes the following dependencies:
 
 - hive: ^2.2.3
 - hive_flutter: ^1.1.0
@@ -17,7 +21,7 @@ X_VPN is a free VPN app implemented in Flutter, with native Java integration and
 
 ## Implementation
 
-The app uses native Java code via the method channel to handle VPN connections and integrate with the device's VPN service. Hive is used for local data storage, allowing the app to save VPN server configurations. The Get package is used for state management and navigation. HTTP is used for making API requests to retrieve VPN server information, and CSV is used to parse the CSV response from the VPN server API.
+The app uses native Java code via the method channel to handle VPN connections and integrate with the device's VPN service. This allows us to take advantage of the performance and capabilities of native code while building the app's core functionality. Hive is used for local data storage, allowing the app to save VPN server configurations. The Get package is used for state management and navigation. HTTP is used for making API requests to retrieve VPN server information, and CSV is used to parse the CSV response from the VPN server API.
 
 ## Usage
 
