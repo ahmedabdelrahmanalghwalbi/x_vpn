@@ -1,16 +1,32 @@
-# x_vpn
+# X_VPN
 
-A new Flutter project.
+X_VPN is a free VPN app implemented in Flutter, with native Java integration and the following dependencies:
 
-## Getting Started
+- hive: ^2.2.3
+- hive_flutter: ^1.1.0
+- get: ^4.6.6
+- http: ^1.1.2
+- csv: ^5.1.1
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Secure and private VPN connection
+- Access to multiple VPN servers
+- Automatic server selection
+- Username and password authentication
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Implementation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app uses native Java code via the method channel to handle VPN connections and integrate with the device's VPN service. Hive is used for local data storage, allowing the app to save VPN server configurations. The Get package is used for state management and navigation. HTTP is used for making API requests to retrieve VPN server information, and CSV is used to parse the CSV response from the VPN server API.
+
+## Usage
+
+To use the X_VPN app, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/ahmedabdelrahmanalghwalbi/x_vpn`
+2. Install dependencies: `flutter pub get`
+3. Run the app: `flutter run`Please refer to the project's documentation for more detailed instructions on building, running, and customizing the app.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
